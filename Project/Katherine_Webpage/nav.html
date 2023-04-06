@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/fontawesome/css/all.css" />
+    <link rel="stylesheet" href="./style/reset.css" />
+
+    <style>
+      .nav-wrapper {
+        width: 100%;
+        position: relative;
+      }
+      .nav {
+        margin: 70px auto;
+        width: 60%;
+        height: 100px;
+        line-height: 100px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .nav,
+      .search-input,
+      .nav-wrapper {
+        background-color: #333;
+      }
+
+      .infor-items,
+      .icon,
+      ::placeholder,
+      .qrcode-text {
+        color: white;
+      }
+      .infor-items {
+        text-decoration: none;
+        display: inline-block;
+        margin: 0 50px;
+      }
+
+      .search-input,
+      .search-icon {
+        margin: 0 10px;
+        height: 50px;
+      }
+      .search-input {
+        border: 1px solid white;
+        border-radius: 5%;
+      }
+
+      ::placeholder {
+        font-weight: bolder;
+      }
+
+      .icon {
+        font-size: 20px;
+        margin-right: 20px;
+      }
+      ::placeholder {
+        text-align: center;
+      }
+      .icon:hover {
+        color: #9f9a9a;
+      }
+
+      .hidden {
+        position: absolute;
+        justify-content: flex-end;
+        width: 100%;
+        height: 400px;
+        top: 100px;
+        left: 0;
+        background-color: #ab1d3f;
+        border: 1px solid #333;
+        border-top: none;
+        box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.2);
+        display: none;
+      }
+
+      .hidden-right {
+        width: 700px;
+        height: 400px;
+        background-color: #871430;
+        float: right;
+      }
+
+      .qrcode {
+        width: 120px;
+        height: 120px;
+      }
+      .qrcode {
+        margin: 70px 0 -30px 70px;
+      }
+
+      .qrcode-text {
+        font-size: 18px;
+        margin-left: 40px;
+        font-family: cursive;
+      }
+      .infor:hover ~ .hidden {
+        display: block;
+   
+      }
+      .infor-items ~ .hidden {
+        display: block;
+      }
+      .hidden:hover {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-wrapper">
+      <div class="nav">
+        <img class="photo" src="./img/11.jpg" alt="" />
+        <div class="infor">
+          <a href="javascript" class="infor-items">Admission</a>
+          <a href="javascript" class="infor-items">Programs</a>
+          <a href="javascript" class="infor-items">Performances</a>
+          <a href="javascript" class="infor-items">About Me</a>
+          <a href="javascript" class="infor-items">Giving</a>
+        </div>
+        <div class="hidden">
+          <div class="hidden-right">
+            <img class="qrcode" src="./img/qrcode.JPG" alt="" />
+            <div class="qrcode-text">Contact me at Wechat</div>
+          </div>
+        </div>
+        <div class="search">
+          <input class="search-input" type="text" placeholder="INFO FOR" />
+          <a class="search-icon" href="javascript:;"
+            ><i class="fas fa-search icon"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
