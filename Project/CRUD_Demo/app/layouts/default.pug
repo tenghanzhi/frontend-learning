@@ -1,0 +1,165 @@
+doctype html
+html.no-js(lang='')
+	head
+		meta(charset='utf-8')
+		meta(name='description', content='')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title webapp
+		link(rel='apple-touch-icon', href='apple-touch-icon.png')
+		//- Place favicon.ico in the root directory
+		//- build:css styles/vendor.css
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css', type='text/css')
+		link(rel='stylesheet', href='http://pages.revox.io/dashboard/4.1.0/html/condensed/pages/css/pages-icons.css', type='text/css')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', type='text/css')
+		//- endbuild
+		//- build:css styles/main.css
+		link(rel='stylesheet', href='./styles/main.css', type='text/css')
+		//- endbuild
+	body
+		<!--[if IE]>
+			p.browserupgrade You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
+		<![endif]-->
+		.container
+
+			block content
+
+			.footer
+		//- Modal
+		#checkOutBox.modal.fade(tabindex='-1', role='dialog', aria-labelledby='checkOutLabel', aria-hidden='true')
+			.modal-dialog(role='document')
+				.modal-content
+					.modal-header
+						h5#checkOutLabel.modal-title 
+							i.fas.fa-cash-register
+							| Come on! Let's check out
+						button.close(type='button', data-dismiss='modal', aria-label='Close')
+							span(aria-hidden='true') 
+								i.pg-close_line
+					.modal-body
+						.col-12
+							ul#pills-tab.nav.nav-pills.mb-3.text-center.no-gutters(role='tablist')
+								li.nav-item.bg-light.col-6
+									a#pills-credit-card-tab.nav-link.active(data-toggle='pill', href='#pills-credit-card', role='tab', aria-controls='pills-credit-card', aria-selected='true')
+										span.badge
+											i.fas.fa-credit-card.mr-1
+											| Creidt Card
+								li.nav-item.bg-light.col-6
+									a#pills-paypal-tab.nav-link(data-toggle='pill', href='#pills-paypal', role='tab', aria-controls='pills-paypal', aria-selected='false')
+										span.badge
+											i.fab.fa-paypal.mr-1
+											| PayPal
+								li.nav-item.bg-light.col-12
+									a#pills-bank-tab.nav-link(data-toggle='pill', href='#pills-bank', role='tab', aria-controls='pills-bank', aria-selected='false') 
+										span.badge
+											i.fas.fa-university.mr-1
+											| Bank Transfer
+
+							#pills-tabContent.tab-content
+								#pills-credit-card.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='pills-credit-card-tab')
+									form.needs-validation(novalidate)
+										.form-group
+											label(for='fullName') Full Name
+											input#fullName.form-control(type='input', placeholder="Enter FullName", required)
+											.valid-feedback
+												| Looks good!
+											.invalid-feedback
+												| Full Name!
+
+										.form-group
+											label(for='cardNumber') Card Number
+											.input-group
+												input#cardNumber.form-control(type='input', placeholder="Enter Card Number", required)
+												.input-group-append
+													span.input-group-text
+														i.fab.fa-cc-visa
+														i.fab.fa-cc-amex.ml-1.mr-1
+														i.fab.fa-cc-amex
+												.valid-feedback
+													| Looks good!
+												.invalid-feedback
+													| xxxx xxxx xxxx xxxx
+										.form-group
+											.input-group
+												.row
+													.col-8
+														label(for='expiration') Expiration
+														.input-group
+															.input-group-prepend.d-block
+																input#expiration.form-control.date-valid(type='number', placeholder='MM', max='12' required)
+																.valid-feedback
+																	| Looks good!
+																.invalid-feedback
+																	| 0~12
+															.input-group-prepend.d-block
+																input#expiration.form-control.date-valid(type='number', placeholder='YY', required)
+																.valid-feedback
+																	| Looks good!
+																.invalid-feedback
+																	| 00~99
+
+													.col-4
+														label(for='ccv') 
+															| CCV
+															i.fas.fa-question-circle
+														input#ccv.form-control.text-uppercase(type='number', placeholder='CCV', required)
+														.valid-feedback
+															| Looks good!
+														.invalid-feedback
+															| xxx
+
+										.form-group.form-check
+											input#chk.form-check-input(type='checkbox', required)
+											label.form-check-label(for='chk') 
+												b.h6 Agreed to terms and conditions 
+											.valid-feedback
+												| Looks good!
+											.invalid-feedback
+												| You must agree before submitting.
+										.col-12
+											.row
+												button.btn.btn-primary.btn-block(type='submit') Submit
+
+								#pills-paypal.tab-pane.fade(role='tabpanel', aria-labelledby='pills-paypal-tab')
+									p
+										| PayPal is the easliest way to pay online
+									p
+										button.btn.btn-primary(type='submit') 
+											span.badge
+												i.fab.fa-paypal.mr-1
+												| Login my PayPal
+									p
+										b Note:
+										| Here are some notes.
+
+								#pills-bank.tab-pane.fade(role='tabpanel', aria-labelledby='pills-bank-tab')
+									p
+										| Bank account details
+									p
+										b Bank:
+									p
+										| The World Bank
+									p
+										b Account Number:
+									p
+										| 123123123
+									p
+										b IBAN:
+									p
+										| 132132132
+									p
+										b Note:
+									P
+										| Here are some notes.
+					.modal-footer
+
+
+		//- build:js scripts/vendor.js
+		script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+
+		//- endbuild
+		//- build:js scripts/main.js
+		script(src='scripts/main.js', type='text/javascript')
+		//- endbuild

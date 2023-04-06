@@ -1,0 +1,17 @@
+结构 html用于描述页面的结构
+表现 CSS用于控制页面元素的样式
+行为 JavaScript用于响应用户的操作
+
+html Hypertext Markup Language
+
+<标签名> </标签名>
+
+
+<html>根标签</html>
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h2>二级标题</h2>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>
+<p>段落</p>

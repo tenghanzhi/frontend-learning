@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise API - all</title>
+</head>
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            resolve('OK');
+        })
+        // let p2 = Promise.resolve('Success');
+        let p2 = Promise.reject('Error');
+        let p3 = Promise.resolve('Oh Yeah');
+        
+        //全部resolve,则输出fulfilled和三个对象成功的结果组成的数组
+        //只要有一个reject,则输出rejected和失败对象的结果
+        const result = Promise.all([p1, p2, p3]);
+
+        console.log(result);
+    </script>
+</body>
+</html>
