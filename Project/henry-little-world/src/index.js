@@ -13,7 +13,7 @@ import More from './pages/More/More';
 import categoryMatrix from './pages/common/categoryMatrix'
 import './index.css';
 
-export default function App() {
+const Main = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -31,10 +31,12 @@ export default function App() {
     </BrowserRouter>
   );
 }
+export default Main
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Main />
   </React.StrictMode>
 );
 
