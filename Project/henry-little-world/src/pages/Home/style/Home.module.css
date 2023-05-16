@@ -1,0 +1,9 @@
+.lw_home_space {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.lw_home_card_icon{
+  margin-right: 10px;
+}
