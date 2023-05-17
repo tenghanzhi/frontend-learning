@@ -12,10 +12,19 @@
 
 .portfolio_card {
   margin: auto;
-  width: 100%;;
+  width: 100%;
 }
 
-.portfolio_card_grid{
-margin: 0px 10px;
+.portfolio_card_grid {
+  margin: 0px 10px;
 }
 
+@media (max-width: 800px) {
+  .portfolio_card_grid {
+    margin: 0px 0px;
+  }
+
+  .portfolio_card_outter {
+    margin: 15px -10px 0px -10px;
+  }
+}
