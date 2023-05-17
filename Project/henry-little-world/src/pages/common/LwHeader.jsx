@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import { Layout, Menu, Input, Button } from "antd";
 import {
   GithubOutlined,
@@ -14,71 +14,75 @@ import {
 import categoryMatrix from "./categoryMatrix";
 import style from "./style/LwHeader.module.css";
 
-const menuItems = [
-  {
-    label: <Link to="/">{categoryMatrix.HOME}</Link>,
-    key: categoryMatrix.HOME.toLowerCase(),
-    icon: <HomeOutlined />,
-  },
-  {
-    label: (
-      <Link to={"/" + categoryMatrix.PORTFOLIO.toLowerCase()}>
-        {categoryMatrix.PORTFOLIO}
-      </Link>
-    ),
-    key: categoryMatrix.PORTFOLIO.toLowerCase(),
-    icon: <UserOutlined />,
-  },
-  {
-    label: (
-      <Link to={"/" + categoryMatrix.COMPONENTS.toLowerCase()}>
-        {categoryMatrix.COMPONENTS}
-      </Link>
-    ),
-    key: categoryMatrix.COMPONENTS.toLowerCase(),
-    icon: <Html5Outlined />,
-  },
-  {
-    label: (
-      <Link to={"/" + categoryMatrix.APPLICATIONS.toLowerCase()}>
-        {categoryMatrix.APPLICATIONS}
-      </Link>
-    ),
-    key: categoryMatrix.APPLICATIONS.toLowerCase(),
-    icon: <AppstoreOutlined />,
-  },
-  {
-    label: (
-      <Link to={"/" + categoryMatrix.LEETCODES.toLowerCase()}>
-        {categoryMatrix.LEETCODES}
-      </Link>
-    ),
-    key: categoryMatrix.LEETCODES.toLowerCase(),
-    icon: <CodeOutlined />,
-  },
-  {
-    label: (
-      <Link to={"/" + categoryMatrix.GITHUB.toLowerCase()}>
-        {categoryMatrix.GITHUB}
-      </Link>
-    ),
-    key: categoryMatrix.GITHUB.toLowerCase(),
-    icon: <GithubOutlined />,
-  },
-  {
-    label: (
-      <Link to={"/" + categoryMatrix.MORE.toLowerCase()}>
-        {categoryMatrix.MORE}
-      </Link>
-    ),
-    key: categoryMatrix.MORE.toLowerCase(),
-    icon: <StarOutlined />,
-  },
-];
-
-const onSearch = (value) => console.log(value);
-
 const LwHeader = () => {
+  const location = useLocation();
+
+  const menuItems = [
+    {
+      label: <Link to="/">{categoryMatrix.HOME}</Link>,
+      key: categoryMatrix.HOME.toLowerCase(),
+      icon: <HomeOutlined />,
+    },
+    {
+      label: (
+        <Link to={"/" + categoryMatrix.PORTFOLIO.toLowerCase()}>
+          {categoryMatrix.PORTFOLIO}
+        </Link>
+      ),
+      key: categoryMatrix.PORTFOLIO.toLowerCase(),
+      icon: <UserOutlined />,
+    },
+    {
+      label: (
+        <Link to={"/" + categoryMatrix.COMPONENTS.toLowerCase()}>
+          {categoryMatrix.COMPONENTS}
+        </Link>
+      ),
+      key: categoryMatrix.COMPONENTS.toLowerCase(),
+      icon: <Html5Outlined />,
+    },
+    {
+      label: (
+        <Link to={"/" + categoryMatrix.APPLICATIONS.toLowerCase()}>
+          {categoryMatrix.APPLICATIONS}
+        </Link>
+      ),
+      key: categoryMatrix.APPLICATIONS.toLowerCase(),
+      icon: <AppstoreOutlined />,
+    },
+    {
+      label: (
+        <Link to={"/" + categoryMatrix.LEETCODES.toLowerCase()}>
+          {categoryMatrix.LEETCODES}
+        </Link>
+      ),
+      key: categoryMatrix.LEETCODES.toLowerCase(),
+      icon: <CodeOutlined />,
+    },
+    {
+      label: (
+        <Link to={"/" + categoryMatrix.GITHUB.toLowerCase()}>
+          {categoryMatrix.GITHUB}
+        </Link>
+      ),
+      key: categoryMatrix.GITHUB.toLowerCase(),
+      icon: <GithubOutlined />,
+    },
+    {
+      label: (
+        <Link to={"/" + categoryMatrix.MORE.toLowerCase()}>
+          {categoryMatrix.MORE}
+        </Link>
+      ),
+      key: categoryMatrix.MORE.toLowerCase(),
+      icon: <StarOutlined />,
+    },
+  ];
+
+  const onSearch = (value) => console.log(value);
+
+  console.log(location.pathname.slice(1));
+
   return (
     <Fragment>
       <Layout.Header className={style.lw_header_wrapper}>
@@ -88,6 +92,11 @@ const LwHeader = () => {
           mode="horizontal"
           items={menuItems}
           defaultSelectedKeys={["home"]}
+          selectedKeys={[
+            location.pathname.slice(1) === ""
+              ? "home"
+              : location.pathname.slice(1),
+          ]}
         />
         <Input.Search
           className={style.lw_header_search}
