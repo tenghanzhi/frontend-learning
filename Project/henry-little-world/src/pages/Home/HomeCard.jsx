@@ -1,12 +1,10 @@
 import { Card } from "antd";
 import { Link } from "react-router-dom";
-import categoryMatrix from "../common/categoryMatrix";
 import style from "./style/HomeCard.module.css";
 
 const HomeCard = (props) => {
   const { title, content, extra } = props;
 
-  console.log(title);
   const cardTitle = title ? title : "New Card";
   const cardContents = content ? (
     content
