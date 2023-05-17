@@ -3,9 +3,9 @@ import failPicture from "../common/failPicture";
 import style from "./style/PortfolioCard.module.css";
 
 const PortfolioCard = (props) => {
-  const companyName =
-    props.data.companyName && props.data.companyName !== ""
-      ? props.data.companyName
+  const name =
+    props.data.name && props.data.name !== ""
+      ? props.data.name
       : "None";
   const jobTitle =
     props.data.jobTitle && props.data.jobTitle !== ""
@@ -41,9 +41,9 @@ const PortfolioCard = (props) => {
         else return null;
       })
     : "None";
-  const companyIcon =
-    props.data.companyIcon && props.data.companyIcon !== ""
-      ? props.data.companyIcon
+  const icon =
+    props.data.icon && props.data.icon !== ""
+      ? props.data.icon
       : "error";
 
   return (
@@ -54,9 +54,8 @@ const PortfolioCard = (props) => {
             <Image
               width={100}
               height={100}
-              src={companyIcon}
+              src={icon}
               fallback={failPicture}
-              loading="lazy"
               preview={false}
             />
           </Col>
@@ -65,7 +64,7 @@ const PortfolioCard = (props) => {
               level={3}
               className={style.portfolio_card_title_company_name}
             >
-              {companyName}
+              {name}
             </Typography.Title>
             <Typography.Title
               level={5}
