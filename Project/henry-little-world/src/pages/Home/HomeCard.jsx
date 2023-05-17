@@ -25,6 +25,7 @@ const HomeCard = (props) => {
         setCardContents(
           <HomeCardList data={portfolioData} type={categoryMatrix.PORTFOLIO} />
         );
+        break;
       }
       case categoryMatrix.COMPONENTS: {
         return null;
