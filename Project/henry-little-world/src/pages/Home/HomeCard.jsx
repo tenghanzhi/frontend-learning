@@ -52,7 +52,6 @@ const HomeCard = (props) => {
       title={cardTitle}
       extra={cardExtra}
       bordered={false}
-      // bodyStyle={{ overflow: "hidden" }}
     >
       {cardContents}
     </Card>
