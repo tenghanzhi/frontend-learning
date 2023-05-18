@@ -4,9 +4,7 @@ import style from "./style/PortfolioCard.module.css";
 
 const PortfolioCard = (props) => {
   const name =
-    props.data.name && props.data.name !== ""
-      ? props.data.name
-      : "None";
+    props.data.name && props.data.name !== "" ? props.data.name : "None";
   const jobTitle =
     props.data.jobTitle && props.data.jobTitle !== ""
       ? props.data.jobTitle
@@ -42,15 +40,13 @@ const PortfolioCard = (props) => {
       })
     : "None";
   const icon =
-    props.data.icon && props.data.icon !== ""
-      ? props.data.icon
-      : "error";
+    props.data.icon && props.data.icon !== "" ? props.data.icon : "error";
 
   return (
-    <Card className={style.portfolio_card}>
+    <Card className={style.lw_portfolio_card}>
       <Space align="start" direction="horizontal" wrap={true}>
         <Row>
-          <Col className={style.portfolio_card_grid} flex="100px">
+          <Col className={style.lw_portfolio_card_grid} flex="100px">
             <Image
               width={100}
               height={100}
@@ -59,23 +55,27 @@ const PortfolioCard = (props) => {
               preview={false}
             />
           </Col>
-          <Col className={style.portfolio_card_grid} flex="auto">
+          <Col className={style.lw_portfolio_card_grid} flex="auto">
             <Typography.Title
               level={3}
-              className={style.portfolio_card_title_company_name}
+              className={style.lw_portfolio_card_title_company_name}
             >
               {name}
             </Typography.Title>
             <Typography.Title
               level={5}
-              className={style.portfolio_card_title_job_title}
+              className={style.lw_portfolio_card_title_job_title}
             >
               {jobTitle}
             </Typography.Title>
           </Col>
         </Row>
       </Space>
-      <Descriptions className={style.portfolio_card_outter} bordered column={4}>
+      <Descriptions
+        className={style.lw_portfolio_card_outter}
+        bordered
+        column={4}
+      >
         <Descriptions.Item label="Project Name" span={4}>
           {projectName}
         </Descriptions.Item>

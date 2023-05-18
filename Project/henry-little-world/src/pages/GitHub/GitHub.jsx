@@ -1,5 +1,7 @@
+import LwLayout from "../common/LwLayout";
+
 const GitHub = () => {
-  return <>GitHub</>;
+  return <LwLayout />;
 };
 
 export default GitHub;

@@ -1,5 +1,7 @@
+import LwLayout from "../common/LwLayout";
+
 const Components = () => {
-  return <>Components</>;
+  return <LwLayout />;
 };
 
 export default Components;

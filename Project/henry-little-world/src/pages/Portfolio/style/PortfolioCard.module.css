@@ -1,30 +1,25 @@
-.portfolio_card_outter {
+.lw_portfolio_card_outter {
   margin: 15px 10px 0px 10px;
 }
 
-.portfolio_card_title_company_name {
+.lw_portfolio_card_title_company_name {
   margin: 5px 0px 5px 10px !important;
 }
 
-.portfolio_card_title_job_title {
+.lw_portfolio_card_title_job_title {
   margin: 0px 0px 0px 10px !important;
 }
 
-.portfolio_card {
-  margin: auto;
-  width: 100%;
-}
-
-.portfolio_card_grid {
+.lw_portfolio_card_grid {
   margin: 0px 10px;
 }
 
 @media (max-width: 800px) {
-  .portfolio_card_grid {
+  .lw_portfolio_card_grid {
     margin: 0px 0px;
   }
 
-  .portfolio_card_outter {
+  .lw_portfolio_card_outter {
     margin: 15px -10px 0px -10px;
   }
 }
