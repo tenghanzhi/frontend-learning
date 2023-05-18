@@ -1,5 +1,7 @@
+import LwLayout from "../common/LwLayout";
+
 const Applications = () => {
-  return <>Applications</>;
+  return <LwLayout />;
 };
 
 export default Applications;

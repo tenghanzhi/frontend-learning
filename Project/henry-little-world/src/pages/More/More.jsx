@@ -1,5 +1,7 @@
+import LwLayout from "../common/LwLayout";
+
 const More = () => {
-  return <>More</>;
+  return <LwLayout />;
 };
 
 export default More;

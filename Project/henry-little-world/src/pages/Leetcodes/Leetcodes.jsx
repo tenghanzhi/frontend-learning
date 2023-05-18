@@ -1,5 +1,7 @@
+import LwLayout from "../common/LwLayout";
+
 const Leetcodes = () => {
-  return <>Leetcodes</>;
+  return <LwLayout />;
 };
 
 export default Leetcodes;

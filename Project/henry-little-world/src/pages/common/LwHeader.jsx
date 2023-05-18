@@ -81,8 +81,6 @@ const LwHeader = () => {
 
   const onSearch = (value) => console.log(value);
 
-  console.log(location.pathname.slice(1));
-
   return (
     <Fragment>
       <Layout.Header className={style.lw_header_wrapper}>

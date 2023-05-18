@@ -17,6 +17,7 @@ const HomeCard = (props) => {
 
   useEffect(() => {
     getCardContents();
+    // eslint-disable-next-line
   }, []);
 
   const getCardContents = () => {
