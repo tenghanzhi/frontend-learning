@@ -1,8 +1,0 @@
-/* The word-break property specifies how words should break when reaching the end of a line. */
-
-p.a {
-    word-break: normal;
-    word-break: break-all;
-    word-break: keep-all;
-    word-break: break-word;
-  }
